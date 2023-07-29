@@ -7,7 +7,47 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<header>
+    <h1>Min-Max Course Scheduler</h1>
+</header>
+<main>
+    <section class ="upload">
+        <form id="json-upload">
+            <input id="json-file" type="file" accept=".json">
+            <button id="upload-button" type="submit">Upload</button>
+            <label class ="switch">
+                <input type="checkbox">
+                <span class="slider-round"></span>
+                <span class="switch-text">Jurusan / MataKuliah</span>
+            </label>
+        </form>
+    </section>
+    <section class="course-list">
+        <div id = "list-header">
+            <h2 id="list-title">List Mata Kuliah</h2>
+            <button id="reset-button">Reset</button>
+        </div>
+        <div id="list-body">
+            <article class="course-item">
+                <h3>IF2120 - Matematika Diskrit</h3>
+                <p>SKS              : 3</p>
+                <p>Jurusan          : Teknik Informatika</p>
+                <p>Semester Minimal : 3</p>
+                <p>Prediksi Nilai   : A</p>
+            </article>
+        </div>
+    </section>
+    <aside class="input-output">
+        <form id="input-jurusan">
+            <select name="jurusan" id="jurusan">
+            </select>
+            <input id="sks-min" type="number" placeholder="SKS Minimal">
+            <input id="sks-max" type="number" placeholder="SKS Maksimal">
+            <input id="semester" type="number" placeholder="Semester">
+            <button id="search" type="submit">Find Optimal</button>
+        </form>
+    </aside>
+</main>
 <script src="scripts.js"></script>
 </body>
 </html>
