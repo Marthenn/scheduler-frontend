@@ -1,0 +1,202 @@
+* {
+    padding: 0,
+    margin: 0,
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1746A2;
+    margin: 0 0 0 0;
+}
+
+input, button {
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5F9DF7;
+    color: white;
+}
+
+main {
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.input-constraint {
+    float: right;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #5F9DF7;
+    border-radius: 25px;
+    color: white;
+    width: 28%;
+}
+
+.input-constraint input,
+button,
+.input-constraint select {
+    padding: 5px;
+    border-radius: 25px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    width: 100%;
+    outline: none;
+    font-weight: 650;
+    font-size: 16px;
+    text-after-overflow: ellipsis;
+}
+
+button {
+    background-color: #1746A2;
+    color: white;
+    cursor: pointer;
+}
+
+.upload {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 15px;
+    background-color: #5F9DF7;
+    border-radius: 25px;
+}
+
+#json-file {
+    color: white;
+    font-weight: 500;
+    width: 80%;
+}
+
+.upload-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.upload-button > button {
+    min-height: 40px;
+    min-width: 100px;
+    max-width: 100px;
+    border-radius: 1000px;
+    margin-left: -150px;
+}
+
+.upload-button > button,
+.upload-button > switch {
+    margin-top: 20px;
+    margin-right: 200px;
+}
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-text {
+    margin-left: 75px;
+    display: inline;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+    color: white;
+    font-weight: 500;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e5e5e5;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #1746A2;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #1746A2;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.course-list {
+    background-color: #5F9DF7;
+    border-radius: 25px;
+    color: white;
+    padding: 20px;
+    padding-top: 5px;
+    float: left;
+    width: 60%;
+    align-items: center;
+}
+
+#list-header {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    grid-gap: 10px;
+}
+
+#list-header > button {
+    height: 40px;
+    margin-top: 15px;
+}
+
+#list-body {
+    border-radius: 25px;
+    background-color: #FFF7E9;
+    padding: 8px 20px 20px 20px;
+    margin-top: 15px;
+    color: black;
+}

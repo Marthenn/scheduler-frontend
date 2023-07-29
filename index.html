@@ -8,38 +8,45 @@
 </head>
 <body>
 <header>
-    <h1>Min-Max Course Scheduler</h1>
+    <h1>Min — Max Course Scheduler</h1>
 </header>
 <main>
-    <section class ="upload">
-        <form id="json-upload">
-            <input id="json-file" type="file" accept=".json">
+    <form class ="upload">
+        <input id="json-file" type="file" accept=".json">
+        <section class="upload-button">
             <button id="upload-button" type="submit">Upload</button>
             <label class ="switch">
                 <input type="checkbox">
-                <span class="slider-round"></span>
+                <span class="slider"></span>
                 <span class="switch-text">Jurusan / MataKuliah</span>
             </label>
-        </form>
-    </section>
+        </section>
+    </form>
     <section class="course-list">
         <div id = "list-header">
             <h2 id="list-title">List Mata Kuliah</h2>
             <button id="reset-button">Reset</button>
         </div>
         <div id="list-body">
-            <article class="course-item">
-                <h3>IF2120 - Matematika Diskrit</h3>
-                <p>SKS              : 3</p>
-                <p>Jurusan          : Teknik Informatika</p>
-                <p>Semester Minimal : 3</p>
-                <p>Prediksi Nilai   : A</p>
-            </article>
+<!--            <article class="course-item">-->
+<!--                <h3>IF2120 - Matematika Diskrit</h3>-->
+<!--                <p>SKS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: 3</p>-->
+<!--                <p>Jurusan &emsp;&emsp;&emsp;&emsp;&emsp; : Teknik Informatika</p>-->
+<!--                <p>Semester Minimal&emsp;: 3</p>-->
+<!--                <p>Prediksi Nilai&emsp;&emsp;&emsp;&nbsp;: A</p>-->
+<!--            </article>-->
         </div>
     </section>
-    <aside class="input-output">
+    <aside class="input-constraint">
         <form id="input-jurusan">
             <select name="jurusan" id="jurusan">
+<!--                <option value="Teknik Informatika">Teknik Informatika</option>-->
+<!--                <option value="Teknik Elektro">Teknik Elektro</option>-->
+<!--                <option value="Teknik Industri">Teknik Industri</option>-->
+<!--                <option value="Teknik Mesin">Teknik Mesin</option>-->
+<!--                <option value="Teknik Sipil">Teknik Sipil</option>-->
+<!--                <option value="Teknik Lingkungan">Teknik Lingkungan</option>-->
+<!--                <option value="Teknik Perencanaan Wilayah dan Kota">Teknik Perencanaan Wilayah dan Kota</option>-->
             </select>
             <input id="sks-min" type="number" placeholder="SKS Minimal">
             <input id="sks-max" type="number" placeholder="SKS Maksimal">
