@@ -97,7 +97,7 @@ button {
     min-width: 100px;
     max-width: 100px;
     border-radius: 1000px;
-    margin-left: -150px;
+    margin-left: 350px;
 }
 
 .upload-button > button,
@@ -112,6 +112,7 @@ button {
     width: 60px;
     height: 34px;
     margin-top: 10px;
+    margin-left: 150px;
 }
 
 .switch input {
@@ -193,7 +194,7 @@ input:checked + .slider:before {
     margin-top: 15px;
 }
 
-#list-body {
+.course-item {
     border-radius: 25px;
     background-color: #FFF7E9;
     padding: 8px 20px 20px 20px;
