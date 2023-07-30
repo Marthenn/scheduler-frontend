@@ -13,3 +13,15 @@ const constraint_sksmin = document.getElementById('sks-min')
 const constraint_sksmax = document.getElementById('sks-max')
 const constraint_semester = document.getElementById('semester')
 const search_button = document.getElementById('search')
+
+const reset_datas = async() => {
+    try {
+        const response = await fetch('http://localhost:8080/', {
+            method: 'DELETE',
+        });
+        jurusan = []
+        matakuliah = []
+    } catch (err) {
+        alert(err)
+    }
+}
