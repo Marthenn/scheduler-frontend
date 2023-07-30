@@ -48,6 +48,9 @@ const reset_datas = async() => {
         });
         jurusan = []
         matakuliah = []
+
+        matkul_list.innerHTML = ''
+        constraint_jurusan.innerHTML = ''
     } catch (err) {
         alert(err)
     }
