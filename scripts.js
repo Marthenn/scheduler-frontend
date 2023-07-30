@@ -25,3 +25,32 @@ const reset_datas = async() => {
         alert(err)
     }
 }
+
+const get_jurusan = async() => {
+    try {
+        const response = await fetch('http://localhost:8080/jurusan', {
+            method: 'GET',
+        });
+        const data = await response.json();
+        jurusan = data
+    } catch (err) {
+        alert(err)
+    }
+}
+
+const get_matakuliah = async() => {
+    try {
+        const response = await fetch('http://localhost:8080/matakuliah', {
+            method: 'GET',
+        });
+        const data = await response.json();
+        matakuliah = data
+    } catch (err) {
+        alert(err)
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async() => {
+    await get_jurusan()
+    await get_matakuliah()
+})
