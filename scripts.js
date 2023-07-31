@@ -96,8 +96,6 @@ const get_matakuliah = async() => {
     }
 }
 
-//TODO: failed to fetch fix after each posts
-
 const post_jurusan = async() => {
     try {
         const file = upload_file.files[0]
