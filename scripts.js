@@ -96,6 +96,64 @@ const get_matakuliah = async() => {
     }
 }
 
+//TODO: failed to fetch fix after each posts
+
+const post_jurusan = async() => {
+    try {
+        const file = upload_file.files[0]
+        let jsonData = await file.text()
+
+        const response = await fetch('http://localhost:8080/jurusan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        })
+
+        if (response.ok){)
+            await get_jurusan()
+            alert ('Success')
+        } else {
+            alert ('Failed to add jurusan')
+        }
+
+    } catch (err) {
+        alert(err)
+    }
+}
+
+const post_matakuliah = async() => {
+    try {
+        const file = upload_file.files[0]
+        let jsonData = await file.text()
+
+        const response = await fetch('http://localhost:8080/matakuliah', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        })
+
+        await get_matakuliah()
+    } catch (err) {
+        alert(err)
+    }
+}
+
+const post_file = async() => {
+    if (upload_type.checked){
+        await post_matakuliah()
+    } else {
+        await post_jurusan()
+    }
+}
+
+upload_button.addEventListener('click', async() => {
+    await post_file()
+})
+
 document.addEventListener('DOMContentLoaded', async() => {
     await get_jurusan()
     await get_matakuliah()
