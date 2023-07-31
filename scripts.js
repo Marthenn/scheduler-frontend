@@ -110,16 +110,12 @@ const post_jurusan = async() => {
             },
             body: jsonData
         })
-
-        if (response.ok){)
-            await get_jurusan()
-            alert ('Success')
-        } else {
-            alert ('Failed to add jurusan')
-        }
-
     } catch (err) {
-        alert(err)
+        if (err == 'TypeError: Failed to fetch'){
+            alert('SQL is Processing, Please Wait')
+        } else {
+            alert(err)
+        }
     }
 }
 
@@ -135,18 +131,22 @@ const post_matakuliah = async() => {
             },
             body: jsonData
         })
-
-        await get_matakuliah()
     } catch (err) {
-        alert(err)
+        if (err == 'TypeError: Failed to fetch'){
+            alert('SQL is Processing, Please Wait')
+        } else {
+            alert(err)
+        }
     }
 }
 
 const post_file = async() => {
     if (upload_type.checked){
         await post_matakuliah()
+        await get_matakuliah()
     } else {
         await post_jurusan()
+        await get_jurusan()
     }
 }
 
