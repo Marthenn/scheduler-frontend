@@ -148,6 +148,75 @@ const post_file = async() => {
     }
 }
 
+const search_matakuliah = async() => {
+    jurusan = constraint_jurusan.value
+    sksmin = constraint_sksmin.value
+    sksmax = constraint_sksmax.value
+    semester = constraint_semester.value
+
+    if (sksmin == ''){
+        alert('SKS Minimal can\'t be Empty')
+        return
+    }
+    if (sksmax == ''){
+        alert('SKS Maximal can\'t be Empty')
+        return
+    }
+    if (semester == ''){
+        alert('Semester can\'t be Empty')
+        return
+    }
+    if (sksmin < 0){
+        alert('SKS Minimal can\'t be Negative')
+        return
+    }
+    if (sksmax < 0){
+        alert('SKS Maximal can\'t be Negative')
+        return
+    }
+    if (sksmin > sksmax){
+        alert('SKS Minimal can\'t be Greater than SKS Maximal')
+        return
+    }
+    if (semester < 0){
+        alert('Semester can\'t be Negative')
+        return
+    }
+
+    try {
+        const response = await fetch('http://localhost:8080/find', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Jurusan": jurusan,
+                "Semester": parseInt(semester),
+                "SKS_Min": parseInt(sksmin),
+                "SKS_Max": parseInt(sksmax)
+            })
+        });
+        const data = await response.json();
+
+        res = ""
+        totalSKS = data.SKS
+        GPA = data.GPA.toFixed(2)
+        matkul = data.MataKuliah
+        for (i = 0; i < matkul.length; i++){
+            res += i+1 + '. ' + matkul[i].ID + " - " + matkul[i].Nama  + '\n'
+        }
+        res += '\nTotal SKS : ' + totalSKS + '\n'
+        res += 'IP : ' + GPA + '\n'
+        alert(res)
+    } catch (err) {
+        alert(err)
+    }
+}
+
+search_button.addEventListener('click', async() => {
+    await search_matakuliah()
+})
+
 upload_button.addEventListener('click', async() => {
     await post_file()
 })
