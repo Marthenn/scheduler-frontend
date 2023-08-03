@@ -202,6 +202,10 @@ const search_matakuliah = async() => {
         totalSKS = data.SKS
         GPA = data.GPA.toFixed(2)
         matkul = data.MataKuliah
+        if (matkul.length == 0){
+            alert('No Eligible Mata Kuliah Combination Found')
+            return
+        }
         for (i = 0; i < matkul.length; i++){
             res += i+1 + '. ' + matkul[i].ID + " - " + matkul[i].Nama  + '\n'
         }
