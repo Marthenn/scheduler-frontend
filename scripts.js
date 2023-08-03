@@ -43,7 +43,7 @@ const make_matakuliah = (item) => {
 
 const reset_datas = async() => {
     try {
-        const response = await fetch('http://localhost:8080/', {
+        const response = await fetch('http://localhost:36656/', {
             method: 'DELETE',
         });
         jurusan = []
@@ -62,7 +62,7 @@ reset_button.addEventListener('click', async() => {
 
 const get_jurusan = async() => {
     try {
-        const response = await fetch('http://localhost:8080/jurusan', {
+        const response = await fetch('http://localhost:36656/jurusan', {
             method: 'GET',
         });
         const data = await response.json();
@@ -80,7 +80,7 @@ const get_jurusan = async() => {
 
 const get_matakuliah = async() => {
     try {
-        const response = await fetch('http://localhost:8080/matakuliah', {
+        const response = await fetch('http://localhost:36656/matakuliah', {
             method: 'GET',
         });
         const data = await response.json();
@@ -101,7 +101,7 @@ const post_jurusan = async() => {
         const file = upload_file.files[0]
         let jsonData = await file.text()
 
-        const response = await fetch('http://localhost:8080/jurusan', {
+        const response = await fetch('http://localhost:36656/jurusan', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ const post_matakuliah = async() => {
         const file = upload_file.files[0]
         let jsonData = await file.text()
 
-        const response = await fetch('http://localhost:8080/matakuliah', {
+        const response = await fetch('http://localhost:36656/matakuliah', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -184,7 +184,7 @@ const search_matakuliah = async() => {
     }
 
     try {
-        const response = await fetch('http://localhost:8080/find', {
+        const response = await fetch('http://localhost:36656/find', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
