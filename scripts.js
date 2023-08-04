@@ -174,10 +174,6 @@ const search_matakuliah = async() => {
         alert('SKS Maximal can\'t be Negative')
         return
     }
-    if (sksmin > sksmax){
-        alert('SKS Minimal can\'t be Greater than SKS Maximal')
-        return
-    }
     if (semester < 0){
         alert('Semester can\'t be Negative')
         return
